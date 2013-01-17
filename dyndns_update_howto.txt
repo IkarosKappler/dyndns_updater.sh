@@ -1,0 +1,28 @@
+
+Connect to members.dyndns.org:443
+
+
+
+String auth = this.userName+":"+new String(this.password);
+// encode
+byte[] bbuf = auth.getBytes();
+//auth = new BASE64Encoder().encode( bbuf );
+auth = Base64.encodeBytes( bbuf );
+
+
+
+out.write( ("GET /nic/update?hostname="+this.hostName+"&myip="+this.ip+"&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG HTTP/1.0\n").getBytes() );
+out.write( ("Host: members.dyndns.org\n").getBytes() );
+out.write( ("Authorization: Basic "+auth+"\n").getBytes() );
+out.write( ("User-Agent: Self Destructive Corp. - DynDNSsoft alpha - 0.1\n").getBytes() );
+out.write( ("\n\n").getBytes() );
+out.flush()
+
+
+
+
+"GET /nic/update?hostname=" + this.hostName + "&myip=" + this.ip + "&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG HTTP/1.0\n"
+"Host: members.dyndns.org\n"
+"Authorization: Basic "+auth+"\n";
+"User-Agent: Self Destructive Corp. - DynDNSsoft alpha - 0.1\n"
+"\n\n"

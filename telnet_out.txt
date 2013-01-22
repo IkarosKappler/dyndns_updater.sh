@@ -1,0 +1,13 @@
+Trying 204.13.248.111...
+Connected to members.dyndns.org.
+Escape character is '^]'.
+HTTP/1.1 200 OK
+Date: Tue, 22 Jan 2013 06:14:45 GMT
+Server: Apache
+X-User-Status: free
+X-UpdateCode: n
+Content-Type: text/plain
+Accept-Ranges: none
+Connection: close
+
+nochg 92.225.97.52

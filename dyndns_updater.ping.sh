@@ -14,8 +14,70 @@ dyndns_serverport=80;
 
 ip_cache_file="cached_ip.txt";
 ip_list_file="ip_list.txt"
-dyndns_name="booze.dyndns.org";
+interface_name=""
 credentials_file="credentials.txt"
+
+
+
+
+# Prepare dyndns-update: fetch credentials (from file or stdin)
+dyndns_host=""
+dyndns_user=""
+dyndns_b64=""
+if [ ! -f $credentials_file ]; then
+
+    echo "Credentials file $credentials_file not found."
+    echo "Please tell me your login data (will not be stored)."
+
+    echo -n "User: "
+    read user
+
+    echo -n "Password: "    
+    # The stty command disables the realtime echo for input
+    stty -echo
+    read pass
+    stty echo
+    # Force a line break
+    echo ""
+
+    # echo $pass	
+
+else
+
+    echo "Read credentials from config ..."
+    
+    line_no=0;
+    line=""
+    # THIS version of the loop will not work! The forked process has its own environment
+    # so the (global) vars cannot be changed!
+    # grep -v '^[[:space:]]*#' $credentials_file | while read line; do
+
+    # Use a regular loop instead (no comments in file allowed)
+    while read line; do
+
+	line_no=`expr $line_no + 1`;
+    
+	# echo "  >> entry #$line_no: $line";
+
+	if [ $line_no -eq 1 ]; then
+	    dyndns_host=$line;
+	elif [ $line_no -eq 2 ]; then
+	    dyndns_user=$line
+	elif [ $line_no -eq 3 ]; then
+	    dyndns_b64=$line
+	elif [ $line_no -eq 4 ]; then
+	    interface_name=$line
+	fi
+
+    done < $credentials_file
+fi
+
+
+# echo "Host = $dyndns_host"
+# echo "User = $dyndns_user"
+# echo "b64  = $dyndns_b64"
+
+
 
 
 echo "Requesting router IP ..."
@@ -39,7 +101,7 @@ echo "Retrieving current dyndns host IP ..."
 # That's why I retrieve the IP using ping
 working_dir=$(dirname $0)
 # echo "working_dir=$working_dir"
-current_dyndns_ip=$($working_dir/getipfromping.sh $dyndns_name)
+current_dyndns_ip=$($working_dir/getipfromping.sh $dyndns_host)
 
 ec="$?"
 if [ "$ec" -ne "0" ]; then
@@ -96,7 +158,7 @@ echo $my_router_ip > $ip_cache_file
 
 
 echo "Retrieving localhost's inet address ..."
-my_local_address=$(/sbin/ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+my_local_address=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 echo "  >> $my_local_address"
 
 
@@ -146,60 +208,7 @@ grep -v '^[[:space:]]*#' $ip_list_file | while read line; do
 done # < "ip_list.txt"
 
 
-# Prepare dyndns-update: fetch credentials (from file or stdin)
-dyndns_host=""
-dyndns_user=""
-dyndns_b64=""
-if [ ! -f $credentials_file ]; then
 
-    echo "Credentials file $credentials_file not found."
-    echo "Please tell me your login data (will not be stored)."
-
-    echo -n "User: "
-    read user
-
-    echo -n "Password: "    
-    # The stty command disables the realtime echo for input
-    stty -echo
-    read pass
-    stty echo
-    # Force a line break
-    echo ""
-
-    # echo $pass	
-
-else
-
-    echo "Read credentials from config ..."
-    
-    line_no=0;
-    line=""
-    # THIS version of the loop will not work! The forked process has its own environment
-    # so the (global) vars cannot be changed!
-    # grep -v '^[[:space:]]*#' $credentials_file | while read line; do
-
-    # Use a regular loop instead (no comments in file allowed)
-    while read line; do
-
-	line_no=`expr $line_no + 1`;
-    
-	# echo "  >> entry #$line_no: $line";
-
-	if [ $line_no -eq 1 ]; then
-	    dyndns_host=$line;
-	elif [ $line_no -eq 2 ]; then
-	    dyndns_user=$line
-	elif [ $line_no -eq 3 ]; then
-	    dyndns_b64=$line
-	fi
-
-    done < $credentials_file
-fi
-
-
-# echo "Host = $dyndns_host"
-# echo "User = $dyndns_user"
-# echo "b64  = $dyndns_b64"
 
 # For testing with a fake IP (dyndns routing should fail after update)
 # my_router_ip="204.13.248.111";
@@ -212,13 +221,16 @@ dyndns_headers="GET /nic/update?hostname=$dyndns_host&myip=$my_router_ip&wildcar
 
 echo "Going to send update request:" 
 echo $dyndns_headers
-update_result=$(echo $dyndns_headers | telnet $dyndns_servername $dyndns_serverport)
+# update_result=$(echo $dyndns_headers | telnet $dyndns_servername $dyndns_serverport > telnet_out.txt)
+((echo $dyndns_headers; sleep 9) | telnet $dyndns_servername $dyndns_serverport) > telnet_out.txt
 
-echo "Update result: $update_result"
+# echo "Update result: $update_result"
 
 
+telnet_out=`cat telnet_out.txt`
 
 
+echo "telnet_out=$telnet_out"
 
 
 

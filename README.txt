@@ -68,13 +68,18 @@ Ther are 5 files:
 
  - credentials.txt
    The script will try to read the authorization credentials from this file.
-   The file MUST consist of at least these three lines (additional lines will be dropped):
+   The file MUST consist of at least these FOUR (this has changed!) lines (additional lines will 
+   be dropped):
      - your dyndns host name
      - your dyndns user name
      - your base64-encoded username plus colon plus password
        (Example: base64_encode("testuser:secret_password"))
        This is not really secure but I didn't want to store my pw in plain text so anyone
        peeking at my monitor would read it if I had the file open.
+       
+       To create that entry just type:
+       > echo "your_username:your_pass" | base64
+     - your local network interface name (usually eth0 or eth1).
    
    If this files does not exist the script will prompt the credentials via stdin.
    Actually this is not helpful when called by cron.d but I wanted to know how to make a
@@ -82,6 +87,10 @@ Ther are 5 files:
 
 
 - This README.txt file.
+
+- [optional temp file]
+  telnet_out.txt 
+  This is just a temp file for storing telnet's output.
 
 
 
@@ -95,6 +104,7 @@ so my updater script failed when run on the raspi.
 -> Then I modified the old script and replace gethostip by getipfromping. Finally it worked :)
    The modified script is located at ./dyndns_updater.ping.sh
 
+-> The dyndns_updater.gethostip.sh is now DEPRECATED.
 
 
 
@@ -122,6 +132,9 @@ Add something like this:
 
 
 # -END-Of-CRON-FILE
+
+
+It does not matter which user installs the cron job. Usually no root privilegues are required.
 
 
 Done :)

@@ -1,0 +1,258 @@
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+HTTP/1.1 200 OK
+Server: Yucca/0.9.8 (Linux) Java/1.7.0_09
+Content-Length: 6947
+Content-Language: en
+Connection: close
+Content-Type: application/xhtml+xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Contents of /</title>
+<link rel="icon" href="/system/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/system/styles/directory.list.css" /></head>
+
+<body>
+
+<h2>Index of /<br/>
+<br/>
+</h2>
+
+<table>
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="CGI_test">CGI_test</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-14 10:32:03</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="custom_directory_handler">custom_directory_handler</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-09 01:39:19</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="custom_error_document">custom_error_document</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-16 17:45:26</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="directory_index">directory_index</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="directory_listing_disabled">directory_listing_disabled</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="kaddin">kaddin</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="php_getcwd">php_getcwd</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-11 00:20:51</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="php_test">php_test</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="secret">secret</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="secret_basic">secret_basic</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-05 15:29:08</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="secret_digest">secret_digest</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-05 15:29:08</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="system">system</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2013-01-09 22:52:50</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="test_AddHandler">test_AddHandler</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="test_GET">test_GET</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="test_POST">test_POST</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_directory"></div></td>
+      <td><a href="test_SetHandler">test_SetHandler</a></td>
+      <td align="right">4.096 bytes</td>
+      <td>dir</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="changes.log">changes.log</a></td>
+      <td align="right">6.156 bytes</td>
+      <td>file</td>
+      <td>2013-01-16 17:42:12</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="example.POST_DATA.txt">example.POST_DATA.txt</a></td>
+      <td align="right">3.871 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="example.POST_DATA.txt~">example.POST_DATA.txt~</a></td>
+      <td align="right">2.531 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="File name with spaces.txt">File name with spaces.txt</a></td>
+      <td align="right">24 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="index.txt">index.txt</a></td>
+      <td align="right">24 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="multipartFormData_A.dat">multipartFormData_A.dat</a></td>
+      <td align="right">1.703 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="mysql_test.php">mysql_test.php</a></td>
+      <td align="right">289 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="post_test.php">post_test.php</a></td>
+      <td align="right">1.288 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="postgres_test.php">postgres_test.php</a></td>
+      <td align="right">334 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="README.txt">README.txt</a></td>
+      <td align="right">15.667 bytes</td>
+      <td>file</td>
+      <td>2013-01-21 22:00:52</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="robots.txt">robots.txt</a></td>
+      <td align="right">48 bytes</td>
+      <td>file</td>
+      <td>2013-01-09 01:39:19</td>
+</tr>
+
+<tr>
+      <td align="right"><div class="icon_file"></div></td>
+      <td><a href="Umlaute.php">Umlaute.php</a></td>
+      <td align="right">342 bytes</td>
+      <td>file</td>
+      <td>2012-12-18 01:30:43</td>
+</tr>
+
+</table>
+<br/>
+<br/>
+Document generated 2013-01-21 22:27:57<br/>
+<hr />
+Yucca/0.9.8 (Linux) Java/1.7.0_09<br/>
+</body>
+</html>

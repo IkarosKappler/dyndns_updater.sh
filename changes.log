@@ -1,0 +1,5 @@
+
+
+[2013-01-21]
+ - The credentials file has a 4th extra line: interface name.
+ - The dyndns_updater.gethostip.sh is now DEPRECATED.

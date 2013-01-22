@@ -158,7 +158,7 @@ echo $my_router_ip > $ip_cache_file
 
 
 echo "Retrieving localhost's inet address ..."
-my_local_address=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+my_local_address=$(/sbin/ifconfig $interface_name | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 echo "  >> $my_local_address"
 
 
